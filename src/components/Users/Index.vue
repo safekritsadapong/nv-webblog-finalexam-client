@@ -1,20 +1,23 @@
 <template>
   <div>
-    <h1>Get All Users</h1>
-    <div>จํานวนผู้ใช้งาน {{ users.length }}</div>
-    <div v-for="user in users" v-bind:key="user.id">
-      <div>id: {{ user.id }}</div>
-      <div>ชืEอ-นามสกุล: {{ user.name }} - {{ user.lastname }}</div>
-      <div>email: {{ user.email }}</div>
-      <div>password: {{ user.password }}</div>
+    <h1>Get All speakers</h1>
+    <div>จํานวน {{ speakers.length }}</div>
+    <div v-for="speaker in speakers" v-bind:key="speaker.id">
+      <div>id: {{ speaker.id }}</div>
+      <div>model: {{ speaker.model }}  </div>
+      <div>brand: {{ speaker.brand }}</div>
+      <div>watt: {{speaker.watt }}</div>
+      <div>power: {{ speaker.power }}</div>
+      <div>status: {{ speaker.status }}</div>
+      <div>type: {{ speaker.type }}</div>
       <p>
-        <button v-on:click="navigateTo('/user/' + user.id)">
-          ดูข้อมูลผู้ใช้
+        <button v-on:click="navigateTo('/speaker/' + speaker.id)">
+          ดูข้อมูล
         </button>
-        <button v-on:click="navigateTo('/user/edit/' + user.id)">
+        <button v-on:click="navigateTo('/speaker/edit/' + speaker.id)">
           แกไขข้อมูล
         </button>
-        <button v-on:click="deleteUser(user)">ลบข้อมูล</button>
+        <button v-on:click="deletespeaker(speaker)">ลบข้อมูล</button>
       </p>
       <hr />
     </div>
